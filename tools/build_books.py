@@ -34,6 +34,7 @@ for b in BOOKS:
           "bookFormat":"https://schema.org/Paperback","numberOfPages":None,"image":f"{SITE}/img/{b['cover']}","url":f"{SITE}/livros/{b['slug']}/"}
     ld.pop("numberOfPages")
     samples = "".join(f'<li><img src="../../img/samples/{b["slug"]}-{i}.jpg" alt="Sample coloring page {i} from {b["title"]}" width="680" height="880" loading="lazy"></li>' for i in range(1,5))
+    anim = ('<section aria-labelledby="fill"><h2 id="fill">From line art to color</h2><div class="fill" data-colorfill="../../img/anim/cardinal"><canvas width="640" height="876" role="img" aria-label="A cardinal on a flowering branch, shown as line art that fills with colored-pencil color."></canvas><div><p>One page from the book, colored in. Yours starts as plain lines like this.</p><button type="button" class="btn">Loading…</button></div></div></section><script src="../../js/colorfill.js" defer></script>' if b["slug"]=="garden-birds" else "")
     extra = f'<div><dt>Also inside</dt><dd>{b["extra"]}</dd></div>' if b["extra"] else ""
     html = f'''{HEAD}<title>{b["title"]} coloring book | Cayus</title>
 <meta name="description" content="{b["meta"]}"><link rel="stylesheet" href="../../css/site.css"><link rel="icon" href="../../favicon.svg" type="image/svg+xml">
@@ -48,7 +49,7 @@ for b in BOOKS:
 <div><h1>{b["title"]}</h1><p class="sub">{b["sub"]}</p><p class="lede">{b["line"]}</p>
 <p><a class="btn" href="{url}" rel="noopener sponsored">Buy on Amazon</a></p></div></section>
 <section class="about"><p>{b["d1"]}</p><p>{b["d2"]}</p></section>
-<section aria-labelledby="inside"><h2 id="inside">A look inside</h2>
+{anim}<section aria-labelledby="inside"><h2 id="inside">A look inside</h2>
 <ul class="strip">{samples}</ul></section>
 <section aria-labelledby="facts"><h2 id="facts">Details</h2>
 <dl class="facts spec"><div><dt>Designs</dt><dd>{b["n"]}</dd></div><div><dt>Page size</dt><dd>8.5 &times; 11 in</dd></div><div><dt>Print</dt><dd>One side only</dd></div><div><dt>Paper</dt><dd>Blank page behind each design</dd></div>{extra}</dl></section>
