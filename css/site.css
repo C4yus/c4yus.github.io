@@ -74,3 +74,19 @@ footer{border-top:3px solid var(--forest);padding:22px 0 40px;font-size:.9rem;co
   .cover{max-width:240px}
 }
 @media (prefers-reduced-motion:reduce){.wordmark{animation:none}html{scroll-behavior:auto}}
+
+/* book pages */
+.crumb{margin:18px 0 0;font-family:var(--display);font-weight:600;font-size:.95rem}
+.bookhead{display:grid;grid-template-columns:minmax(180px,300px) 1fr;gap:26px 44px;align-items:center;padding:22px 0 10px}
+.bookhead h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6.5vw,4rem);line-height:1;letter-spacing:-.01em}
+.bookhead .sub{margin:10px 0 0;font-size:1.1rem;color:var(--mute)}
+.bookhead .lede{margin:18px 0 22px;max-width:30em;font-size:1.2rem}
+.about{max-width:36em;margin:26px 0 8px}
+main section h2{font-family:var(--display);font-weight:800;font-size:1.6rem;margin:38px 0 14px}
+.strip{display:flex;gap:18px;list-style:none;margin:0;padding:6px 6px 22px;overflow-x:auto;scroll-snap-type:x mandatory}
+.strip li{flex:0 0 min(62%,290px);scroll-snap-align:start}
+.strip img{width:100%;height:auto;display:block;background:#fff;box-shadow:4px 4px 0 var(--forest)}
+.spec{max-width:44em}
+.endcta{margin:34px 0 60px}
+@media (max-width:640px){.bookhead{grid-template-columns:1fr}.bookhead .cover{max-width:260px}}
+.book h2 a{text-decoration-thickness:2px;text-underline-offset:4px}.book h2 a:hover{color:var(--leaf)}
