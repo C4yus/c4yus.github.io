@@ -1,0 +1,76 @@
+:root{
+  --forest:#14261f; --leaf:#4f7f35; --ember:#e2701f; --dusk:#2a2d66;
+  --sage:#eef3ea; --paper:#fbfcf9; --cardinal:#c8372d; --mute:#51604f;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Literata',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sage);color:var(--forest);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+/* top bar */
+.bar{display:flex;gap:22px;align-items:center;justify-content:space-between;padding:18px 0;font-family:var(--display);font-weight:600}
+.bar .mark{font-weight:800;font-size:1.3rem;letter-spacing:.02em;text-decoration:none}
+.bar nav{display:flex;gap:20px;flex-wrap:wrap}
+.bar nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.bar nav a:hover,.bar nav a[aria-current="page"]{border-bottom-color:var(--ember)}
+
+/* hero wordmark: printed in layers */
+.hero{padding:44px 22px 26px}
+.wordmark{
+  margin:0;font-family:var(--display);font-weight:800;line-height:.86;
+  font-size:clamp(5rem,26vw,15rem);letter-spacing:-.02em;
+  background:repeating-linear-gradient(to bottom,var(--forest) 0 7px,var(--leaf) 7px 9px);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:print 1.8s steps(36,end) both;
+}
+@keyframes print{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.hero p{max-width:30em;margin:22px 0 0;font-size:1.25rem}
+
+/* three rooms */
+.rooms{display:grid;gap:0;margin-top:34px}
+.room{display:grid;grid-template-columns:1fr auto;gap:8px 28px;align-items:end;padding:34px max(22px,calc((100% - 1040px)/2 + 22px));text-decoration:none;color:var(--paper)}
+.room h2{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3.4rem);line-height:1}
+.room p{margin:6px 0 0;max-width:34em}
+.room .go{font-family:var(--display);font-weight:700;border:2px solid currentColor;border-radius:999px;padding:8px 20px;white-space:nowrap}
+.room:hover .go{background:var(--paper);color:var(--forest)}
+.room.books{background:var(--leaf)}
+.room.videos{background:var(--dusk)}
+.room.models{background:var(--ember);color:var(--forest)}
+.room.models:hover .go{background:var(--forest);color:var(--paper)}
+
+/* inner pages */
+.page-head{padding:30px 0 10px}
+.page-head h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,8vw,4.6rem);line-height:1;letter-spacing:-.01em}
+.page-head p{max-width:32em;margin:14px 0 0;font-size:1.15rem}
+.shelf{margin:30px 0 50px;border-top:3px solid var(--forest)}
+.book{display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:26px 38px;padding:34px 0;border-bottom:1px solid #c5d1bf;align-items:start}
+.book:last-child{border-bottom:0}
+.cover{width:100%;height:auto;aspect-ratio:8.5/11;display:block;object-fit:cover;background:var(--paper);box-shadow:6px 6px 0 var(--forest)}
+.cover.type{display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.05;color:var(--paper)}
+.type.botanical{background:var(--leaf)}
+.type.mindful{background:var(--dusk)}
+.book h2{margin:0 0 6px;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.1}
+.book .lede{margin:0 0 14px;max-width:34em}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px 18px;margin:0 0 18px;max-width:34em}
+.facts div{border-left:3px solid var(--ember);padding-left:10px}
+.facts dt{font-size:.85rem;color:var(--mute)}
+.facts dd{margin:0;font-family:var(--display);font-weight:700}
+.btn{display:inline-block;background:var(--forest);color:var(--paper);text-decoration:none;font-family:var(--display);font-weight:700;padding:11px 22px;border-radius:6px}
+.btn:hover{background:var(--leaf)}
+.soon{margin:0;font-family:var(--display);font-weight:600;color:var(--leaf)}
+.note{max-width:34em;margin:0 0 56px;color:var(--mute);font-size:.95rem}
+.stub{padding:26px 0 70px;max-width:36em}
+.stub ul{padding-left:1.1em}
+footer{border-top:3px solid var(--forest);padding:22px 0 40px;font-size:.9rem;color:var(--mute)}
+
+@media (max-width:640px){
+  .room{grid-template-columns:1fr}
+  .room .go{justify-self:start;margin-top:10px}
+  .book{grid-template-columns:1fr}
+  .cover{max-width:240px}
+}
+@media (prefers-reduced-motion:reduce){.wordmark{animation:none}html{scroll-behavior:auto}}
