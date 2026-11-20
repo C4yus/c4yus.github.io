@@ -70,7 +70,7 @@ footer{border-top:3px solid var(--forest);padding:22px 0 40px;font-size:.9rem;co
 @media (max-width:640px){
   .room{grid-template-columns:1fr}
   .room .go{justify-self:start;margin-top:10px}
-  .book{grid-template-columns:1fr}
+  .book{grid-template-columns:minmax(0,1fr)}
   .cover{max-width:240px}
 }
 @media (prefers-reduced-motion:reduce){.wordmark{animation:none}html{scroll-behavior:auto}}
@@ -90,3 +90,6 @@ main section h2{font-family:var(--display);font-weight:800;font-size:1.6rem;marg
 .endcta{margin:34px 0 60px}
 @media (max-width:640px){.bookhead{grid-template-columns:1fr}.bookhead .cover{max-width:260px}}
 .book h2 a{text-decoration-thickness:2px;text-underline-offset:4px}.book h2 a:hover{color:var(--leaf)}
+.facts{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
+.more{display:inline-block;margin-left:14px;font-family:var(--display);font-weight:700;padding:11px 2px}
+@media (max-width:640px){.more{margin-left:8px}}
