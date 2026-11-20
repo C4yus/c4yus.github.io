@@ -61,7 +61,7 @@ a{color:inherit}
 .facts dd{margin:0;font-family:var(--display);font-weight:700}
 .btn{display:inline-block;background:var(--forest);color:var(--paper);text-decoration:none;font-family:var(--display);font-weight:700;padding:11px 22px;border-radius:6px}
 .btn:hover{background:var(--leaf)}
-.soon{margin:0;font-family:var(--display);font-weight:600;color:var(--leaf)}
+.soon{margin:0;font-family:var(--display);font-weight:600;color:#3d6429}
 .note{max-width:34em;margin:0 0 56px;color:var(--mute);font-size:.95rem}
 .stub{padding:26px 0 70px;max-width:36em}
 .stub ul{padding-left:1.1em}
