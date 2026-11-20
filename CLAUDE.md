@@ -1,6 +1,6 @@
-# Site Cayus (C4yus/cayus-livros, GitHub Pages)
+# Site Cayus (C4yus/c4yus.github.io, GitHub Pages)
 
-Site estático, sem build de JS. Publicado em https://c4yus.github.io/cayus-livros/
+Site estático, sem build de JS. Publicado em https://c4yus.github.io/ (repositório renomeado de cayus-livros a 20 nov 2026)
 Secções: Livros, Vídeos, Modelos 3D. O João responde em português de Portugal; o texto do site é em inglês.
 
 ## Antes de mexer

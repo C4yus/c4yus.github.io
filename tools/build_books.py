@@ -1,6 +1,6 @@
 """Gera livros/<slug>/index.html para cada livro. Correr na raiz do repo: python3 tools/build_books.py"""
 import os, json
-SITE = "https://c4yus.github.io/cayus-livros"
+SITE = "https://c4yus.github.io"
 BOOKS = [
  dict(slug="garden-birds", asin="B0HSCBDB7D", title="Bold & Easy Garden Birds", sub="50 Large-Print Designs of Cardinals, Blue Jays and Songbirds",
   line="Large birds, simple flowers and plenty of room for your markers.",

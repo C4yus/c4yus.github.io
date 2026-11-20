@@ -12,7 +12,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlparse, unquote
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SITE = "https://c4yus.github.io/cayus-livros"
+SITE = "https://c4yus.github.io"
 errors, warns = [], []
 def err(p, m): errors.append(f"{p}: {m}")
 def warn(p, m): warns.append(f"{p}: {m}")
