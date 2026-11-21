@@ -101,3 +101,32 @@ main section h2{font-family:var(--display);font-weight:800;font-size:1.6rem;marg
 .fill .btn{border:0;cursor:pointer;font-size:1rem}
 .fill .btn:disabled{opacity:.6;cursor:default}
 @media (max-width:640px){.fill{grid-template-columns:minmax(0,1fr)}}
+
+/* steampunk touch: gears, rivets and brass plates (shapes only, palette colors, no gradients) */
+:root{--gear:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M50 11L57.5 2.6L64.8 4.3L67.7 15.3L72.9 18.4L83.9 16.1L88.8 21.8L84.7 32.3L87.1 37.9L97.4 42.5L98 50L88.5 56.1L87.1 62.1L92.8 71.8L88.8 78.2L77.6 77.6L72.9 81.6L71.8 92.8L64.8 95.7L56.1 88.5L50 89L42.5 97.4L35.2 95.7L32.3 84.7L27.1 81.6L16.1 83.9L11.2 78.2L15.3 67.7L12.9 62.1L2.6 57.5L2 50L11.5 43.9L12.9 37.9L7.2 28.2L11.2 21.8L22.4 22.4L27.1 18.4L28.2 7.2L35.2 4.3L43.9 11.5ZM65 50A15 15 0 1 0 35 50A15 15 0 1 0 65 50Z'/%3E%3C/svg%3E");--rivet:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='3' cy='3' r='2.5' fill='%2314261f'/%3E%3C/svg%3E");--rivets:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='10'%3E%3Ccircle cx='18' cy='5' r='2.6' fill='%2314261f'/%3E%3C/svg%3E")}
+.bar .mark{display:inline-flex;align-items:center;gap:8px}
+.bar .mark::before{content:"";width:1.05em;height:1.05em;background:var(--ember);-webkit-mask:var(--gear) center/contain no-repeat;mask:var(--gear) center/contain no-repeat}
+.bar .mark:hover::before{transform:rotate(45deg);transition:transform .5s}
+.hero{position:relative}
+.hero::after{content:"";position:absolute;right:22px;top:58px;width:clamp(56px,10vw,112px);aspect-ratio:1;background:var(--ember);
+  -webkit-mask:var(--gear) center/contain no-repeat;mask:var(--gear) center/contain no-repeat;animation:turn 1.8s cubic-bezier(.3,.6,.4,1) both}
+@keyframes turn{from{transform:rotate(-180deg)}to{transform:rotate(0)}}
+.shelf,footer{position:relative}
+.shelf::before,footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:10px;background:var(--rivets) left center/36px 10px repeat-x}
+footer{padding-top:30px}
+.room{position:relative;overflow:hidden}
+.room::after{content:"";position:absolute;right:-46px;top:-46px;width:150px;aspect-ratio:1;background:currentColor;opacity:.13;
+  -webkit-mask:var(--gear) center/contain no-repeat;mask:var(--gear) center/contain no-repeat;transition:transform .8s;pointer-events:none}
+.room:hover::after{transform:rotate(60deg)}
+.room > *{position:relative;z-index:1}
+.facts div{border:2px solid var(--forest);border-radius:4px;background:var(--paper);padding:7px 12px 8px;
+  background-image:var(--rivet),var(--rivet),var(--rivet),var(--rivet);background-repeat:no-repeat;
+  background-position:3px 3px,calc(100% - 3px) 3px,3px calc(100% - 3px),calc(100% - 3px) calc(100% - 3px);background-size:6px 6px}
+.facts dt{color:var(--mute)}
+.btn{box-shadow:inset 0 0 0 3px var(--forest),inset 0 0 0 4px var(--ember)}
+.btn:hover{box-shadow:inset 0 0 0 3px var(--leaf),inset 0 0 0 4px var(--paper)}
+main section h2{display:flex;align-items:center;gap:10px}
+main section h2::before{content:"";flex:none;width:.8em;height:.8em;background:var(--ember);-webkit-mask:var(--gear) center/contain no-repeat;mask:var(--gear) center/contain no-repeat}
+@media (max-width:640px){.hero::after{top:2px;width:40px}}
+@media (max-width:480px){.bar{gap:12px}.bar nav{gap:12px;font-size:.9rem}}
+@media (prefers-reduced-motion:reduce){.hero::after{animation:none}.room::after,.bar .mark::before{transition:none}.room:hover::after,.bar .mark:hover::before{transform:none}}
