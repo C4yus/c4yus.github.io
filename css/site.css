@@ -2,7 +2,7 @@
    Fundo escuro "laca" forest, latão e cobre, rebites e engrenagens em SVG. Sem degradés decorativos. */
 :root{
   --forest:#14261f; --panel:#1d332a; --deep:#0e1c16;
-  --brass:#c9a14a; --brass-dark:#8a6a2a; --ember:#e2701f; --cardinal:#c8372d;
+  --brass:#c9a14a; --brass-dark:#8a6a2a; --copper:#b87333; --copper-light:#d98b4f; --copper-dark:#7a3f1d; --ember:#e2701f; --cardinal:#c8372d;
   --leaf:#4f7f35; --dusk:#2a2d66; --paper:#fbfcf9; --parchment:#f3ead7; --brown:#5a4a2c;
   --sage:#eef3ea; --mute:#b9c4b3;
   --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
@@ -10,7 +10,7 @@
   --gear:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M50 11L57.5 2.6L64.8 4.3L67.7 15.3L72.9 18.4L83.9 16.1L88.8 21.8L84.7 32.3L87.1 37.9L97.4 42.5L98 50L88.5 56.1L87.1 62.1L92.8 71.8L88.8 78.2L77.6 77.6L72.9 81.6L71.8 92.8L64.8 95.7L56.1 88.5L50 89L42.5 97.4L35.2 95.7L32.3 84.7L27.1 81.6L16.1 83.9L11.2 78.2L15.3 67.7L12.9 62.1L2.6 57.5L2 50L11.5 43.9L12.9 37.9L7.2 28.2L11.2 21.8L22.4 22.4L27.1 18.4L28.2 7.2L35.2 4.3L43.9 11.5ZM65 50A15 15 0 1 0 35 50A15 15 0 1 0 65 50Z'/%3E%3C/svg%3E");
   --rivets:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='10'%3E%3Ccircle cx='16' cy='5' r='2.6' fill='%23c9a14a'/%3E%3C/svg%3E");
   --rivet:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='3' fill='%238a6a2a'/%3E%3C/svg%3E");
-  --grid:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%23c9a14a' stroke-opacity='.09'/%3E%3C/svg%3E");
+  --grid:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%23d98b4f' stroke-opacity='.08'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -44,10 +44,10 @@ a:hover{color:var(--brass)}
 .btn.ghost:hover{background:var(--brass);color:var(--forest)}
 
 /* ===== HOME: hero with the printer ===== */
-.hero{background:var(--deep) var(--grid);border-bottom:3px solid var(--brass)}
+.hero{background:var(--deep) var(--grid);border-bottom:3px solid var(--copper)}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px 40px;align-items:center;padding-top:34px;padding-bottom:40px}
 .hero h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,5.6vw,4.4rem);line-height:1;letter-spacing:-.02em;text-wrap:balance}
-.hero h1 em{font-style:normal;color:var(--brass)}
+.hero h1 em{font-style:normal;color:var(--copper-light)}
 .hero p{margin:18px 0 26px;max-width:30em;font-size:1.2rem;color:var(--mute)}
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
 .printer{width:100%;height:auto;display:block}
@@ -59,8 +59,14 @@ a:hover{color:var(--brass)}
 .printer .needle{transform-box:fill-box;transform-origin:50% 90%;animation:needle 4.2s ease-out .5s both}
 .printer .spin{transform-box:fill-box;transform-origin:center;animation:spin 4.7s linear both}
 .printer .spin.rev{animation-name:spinrev}
-.printer .puff{opacity:0;animation:puff 2.4s ease-out 3}
-.printer .puff:nth-of-type(2){animation-delay:.8s}.printer .puff:nth-of-type(3){animation-delay:1.6s}
+.printer .spin.keep{animation:spin 4.7s linear, spin 40s linear 4.7s infinite}
+.printer .spin.rev.keep{animation:spinrev 4.7s linear, spinrev2 60s linear 4.7s infinite}
+.printer .slow{transform-box:fill-box;transform-origin:center;animation:spin 48s linear infinite}
+.printer .slow.rev{animation:spinrev2 36s linear infinite}
+.printer .puff{fill:#e8e2d4;opacity:0;transform-box:fill-box;transform-origin:center;animation:puff 3.4s ease-out infinite}
+.printer .puff.small{animation-duration:2.6s}
+.printer .puff.tiny{animation:puffs 1.2s ease-out .5s 4}
+.printer .fire{animation:flicker 1.6s ease-in-out infinite alternate}
 .printer .dragon{transform-box:fill-box;transform-origin:50% 100%;animation:hop .7s ease-out 4.8s 2}
 .printer .glow{animation:glow .35s ease-in-out .5s 12 alternate}
 @keyframes layers{to{clip-path:inset(0 0 0 0)}}
@@ -69,7 +75,10 @@ a:hover{color:var(--brass)}
 @keyframes needle{from{transform:rotate(-70deg)}to{transform:rotate(55deg)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes spinrev{to{transform:rotate(-540deg)}}
-@keyframes puff{0%{opacity:0;transform:translateY(0) scale(.6)}30%{opacity:.55}100%{opacity:0;transform:translateY(-46px) scale(1.5)}}
+@keyframes spinrev2{to{transform:rotate(-360deg)}}
+@keyframes flicker{0%{opacity:1}50%{opacity:.75}100%{opacity:.95}}
+@keyframes puffs{0%{opacity:0;transform:translateY(0) scale(.5)}30%{opacity:.6}100%{opacity:0;transform:translateY(-22px) scale(1.4)}}
+@keyframes puff{0%{opacity:0;transform:translate(0,0) scale(.5)}25%{opacity:.6}100%{opacity:0;transform:translate(10px,-70px) scale(2.2)}}
 @keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-10px) rotate(-3deg)}}
 @keyframes glow{to{fill:var(--paper)}}
 
@@ -84,7 +93,7 @@ a:hover{color:var(--brass)}
 .bay h3{margin:0 0 4px;font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.05}
 .bay p{margin:0 0 18px;color:var(--mute);max-width:30em}
 .bay.books{grid-row:span 2;display:flex;flex-direction:column}
-.plate{display:inline-block;align-self:flex-start;justify-self:start;font-family:var(--display);font-weight:700;font-size:.85rem;background:var(--brass);color:var(--forest);padding:3px 12px;border-radius:3px;margin-bottom:12px}
+.plate{display:inline-block;align-self:flex-start;justify-self:start;font-family:var(--display);font-weight:700;font-size:.85rem;background:var(--copper-dark);color:var(--paper);border:1px solid var(--copper-light);padding:3px 12px;border-radius:3px;margin-bottom:12px}
 .fan{position:relative;flex:1;min-height:clamp(230px,30vw,340px);margin:8px 0 26px}
 .fan img{position:absolute;bottom:0;width:38%;height:auto;aspect-ratio:765/990;box-shadow:6px 6px 0 var(--deep);border:2px solid var(--brass);transition:transform .4s}
 .fan img:nth-child(1){left:2%;transform:rotate(-9deg)}
