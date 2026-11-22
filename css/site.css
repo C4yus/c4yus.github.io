@@ -61,6 +61,7 @@ a:hover{color:var(--brass)}
 .printer .spin.rev{animation-name:spinrev}
 .printer .puff{opacity:0;animation:puff 2.4s ease-out 3}
 .printer .puff:nth-of-type(2){animation-delay:.8s}.printer .puff:nth-of-type(3){animation-delay:1.6s}
+.printer .dragon{transform-box:fill-box;transform-origin:50% 100%;animation:hop .7s ease-out 4.8s 2}
 .printer .glow{animation:glow .35s ease-in-out .5s 12 alternate}
 @keyframes layers{to{clip-path:inset(0 0 0 0)}}
 @keyframes climb{from{transform:translateY(0)}to{transform:translateY(-78px)}}
@@ -69,6 +70,7 @@ a:hover{color:var(--brass)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes spinrev{to{transform:rotate(-540deg)}}
 @keyframes puff{0%{opacity:0;transform:translateY(0) scale(.6)}30%{opacity:.55}100%{opacity:0;transform:translateY(-46px) scale(1.5)}}
+@keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-10px) rotate(-3deg)}}
 @keyframes glow{to{fill:var(--paper)}}
 
 /* ===== HOME: the workshop (three different compartments) ===== */
@@ -94,6 +96,7 @@ a:hover{color:var(--brass)}
 .bay.books .btn{align-self:flex-start;margin-top:auto}
 .bay.side{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:6px 20px;align-items:center}
 .bay.side .art{grid-column:2;grid-row:1 / span 3;width:150px;height:150px}
+.bay.side .dragon-art{width:150px;height:auto;margin:-30px 0 -40px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45))}
 .bay.side h3,.bay.side p,.bay.side .btn,.bay.side .plate{grid-column:1}
 .bay.side .btn{justify-self:start}
 .bay.side p{margin-bottom:12px}
@@ -126,6 +129,10 @@ footer{margin-top:40px;border-top:3px solid var(--brass);background:var(--rivets
 .stub ul{padding-left:1.1em}
 .stub a:not(.btn){color:var(--brass)}
 
+.models-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(160px,300px);gap:20px 40px;align-items:center}
+.models-head .mascot{width:100%;height:auto;filter:drop-shadow(0 12px 14px rgba(0,0,0,.5))}
+@media (max-width:640px){.models-head{grid-template-columns:1fr}.models-head .mascot{max-width:220px}}
+
 /* book pages */
 .crumb{margin:18px 0 0;font-family:var(--display);font-weight:600;font-size:.95rem}
 .bookhead{display:grid;grid-template-columns:minmax(180px,300px) 1fr;gap:26px 44px;align-items:center;padding:22px 0 10px}
@@ -152,7 +159,7 @@ main section h2::before{content:"";flex:none;width:.85em;height:.85em;background
   .printer{max-width:560px;margin:0 auto}
   .bays{grid-template-columns:1fr}
   .bay.books{grid-row:auto}
-  .fan{flex:none;min-height:clamp(190px,58vw,320px)}
+  .fan{flex:none;min-height:clamp(150px,44vw,300px)}
 }
 @media (max-width:640px){
   .book,.bookhead,.fill{grid-template-columns:minmax(0,1fr)}
@@ -161,6 +168,7 @@ main section h2::before{content:"";flex:none;width:.85em;height:.85em;background
   .more{margin-left:8px}
   .bay.side{grid-template-columns:minmax(0,1fr) 96px}
   .bay.side .art{width:96px;height:96px}
+  .bay.side .dragon-art{width:104px;height:auto;margin:-10px 0 -20px}
 }
 @media (max-width:480px){.bar{gap:12px}.bar nav{gap:12px;font-size:.9rem}}
 @media (prefers-reduced-motion:reduce){
@@ -169,5 +177,6 @@ main section h2::before{content:"";flex:none;width:.85em;height:.85em;background
   .printer .printed{clip-path:none}
   .printer .gantry{transform:translateY(-78px)}
   .printer .needle{transform:rotate(55deg)}
+  .printer .dragon{animation:none}
   .fan img,.bar .mark::before{transition:none}
 }
