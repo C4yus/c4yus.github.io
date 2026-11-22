@@ -42,7 +42,7 @@ for b in BOOKS:
 <script type="application/ld+json">{json.dumps(ld)}</script>
 </head><body>
 <div class="topline"><div class="wrap"><div class="bar"><a class="mark" href="../../index.html">Cayus</a><nav aria-label="Main">
-<a href="../index.html" aria-current="page">Books</a><a href="../../videos/index.html">Videos</a><a href="../../modelos/index.html">3D models</a></nav></div></div></div>
+<a href="../../modelos/index.html">3D models</a><a href="../index.html" aria-current="page">Books</a><a href="../../videos/index.html">Videos</a></nav></div></div></div>
 <main class="wrap">
 <p class="crumb"><a href="../index.html">All books</a></p>
 <section class="bookhead"><img class="cover" src="../../img/{b["cover"]}" alt="{b["alt"]}" width="765" height="990">
