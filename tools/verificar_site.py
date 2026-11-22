@@ -31,7 +31,16 @@ PARES = [("#fbfcf9", "#4f7f35", 4.5, "texto claro sobre leaf (Livros)"),
          ("#fbfcf9", "#2a2d66", 4.5, "texto claro sobre dusk (Vídeos)"),
          ("#14261f", "#eef3ea", 4.5, "forest sobre sage (texto base)"),
          ("#3d6429", "#eef3ea", 4.5, "leaf-escuro sobre sage ('em breve')"),
-         ("#51604f", "#eef3ea", 4.5, "mute sobre sage")]
+         ("#51604f", "#eef3ea", 4.5, "mute sobre sage"),
+         ("#fbfcf9", "#14261f", 4.5, "texto paper sobre o fundo forest"),
+         ("#b9c4b3", "#14261f", 4.5, "texto mute sobre o fundo forest"),
+         ("#b9c4b3", "#1d332a", 4.5, "texto mute sobre panel"),
+         ("#14261f", "#c9a14a", 4.5, "texto dos botões (forest sobre latão)"),
+         ("#d98b4f", "#14261f", 4.5, "destaque cobre claro sobre forest"),
+         ("#c9a14a", "#14261f", 4.5, "links latão sobre forest"),
+         ("#fbfcf9", "#7a3f1d", 4.5, "etiquetas (paper sobre cobre escuro)"),
+         ("#14261f", "#f3ead7", 4.5, "fichas (forest sobre pergaminho)"),
+         ("#5a4a2c", "#f3ead7", 4.5, "rótulos das fichas (brown sobre pergaminho)")]
 for fg, bg, mn, nome in PARES:
     r = ratio(fg, bg)
     if r < mn: err("contraste", f"{nome}: {r:.2f}:1 (< {mn})")
@@ -121,7 +130,9 @@ if not os.path.exists(os.path.join(ROOT, "robots.txt")): err("robots.txt", "não
 css = open(os.path.join(ROOT, "css/site.css")).read()
 if ":focus-visible" not in css: err("css/site.css", "sem estilo :focus-visible")
 if "prefers-reduced-motion" not in css: err("css/site.css", "sem prefers-reduced-motion")
-pal = {"#14261f", "#4f7f35", "#e2701f", "#2a2d66", "#eef3ea", "#fbfcf9", "#c8372d", "#3d6429", "#51604f", "#c5d1bf"}
+pal = {"#14261f", "#4f7f35", "#e2701f", "#2a2d66", "#eef3ea", "#fbfcf9", "#c8372d", "#3d6429", "#51604f", "#c5d1bf",
+       # oficina steampunk (aprovada 22 nov 2026)
+       "#c9a14a", "#8a6a2a", "#b87333", "#d98b4f", "#7a3f1d", "#f3ead7", "#5a4a2c", "#1d332a", "#0e1c16", "#b9c4b3", "#2f4a3e", "#e8e2d4"}
 for h in set(re.findall(r"#[0-9a-fA-F]{6}\b", css)):
     if h.lower() not in pal: warn("css/site.css", f"cor fora da paleta: {h}")
 for g in re.findall(r"[a-z-]*gradient", css):
