@@ -3,26 +3,34 @@
 Pesquisa feita por 5 agentes, uma categoria cada. Só entraram skills grátis, sem API paga.
 As 8 escolhidas foram lidas antes de entrar aqui (scripts, ligações à rede, caracteres escondidos, instruções suspeitas).
 
-## Instaladas em `.claude/skills/` (versão fixa, revista)
+## Regra (João, 22 nov 2026)
+Nenhuma skill pode enviar dados para fora. Se for boa mas enviar, escreve-se uma versão nossa, só local. Na dúvida, escreve-se sempre a nossa. Detalhes na skill `regras-skills-cayus`.
 
-| Pacote | Skills | Origem (commit) | Notas da revisão |
+## Instaladas em `.claude/skills/` (12)
+
+### As nossas (escritas de raiz, só locais)
+| Skill | Para quê | Baseada em | Porque não ficou a original |
 |---|---|---|---|
-| Superpowers | verification-before-completion, systematic-debugging, brainstorming, writing-plans, executing-plans | github.com/obra/superpowers (22f0b46), MIT | Só texto e scripts locais. Ficaram de fora as que mexem em worktrees/ramos e a using-superpowers (obriga a ver skills em todas as mensagens). |
-| webapp-testing | webapp-testing | github.com/anthropics/skills (e4bb5d9), Apache-2.0 | Oficial da Anthropic. Playwright local. |
-| Impeccable | impeccable | github.com/pbakaus/impeccable (b49177d), Apache-2.0 | Descarrega um programa das releases do GitHub do autor na 1.ª utilização. Telemetria anónima DESLIGADA em `.impeccable/config.json`. Pede direções visuais a impeccable.style (pode falhar na nuvem, não faz mal). |
-| web-quality-skills | accessibility, web-quality-audit, core-web-vitals, performance, best-practices, seo | github.com/addyosmani/web-quality-skills (afa8da9), MIT | Só texto e um script local de análise. |
-| kdp-coloring-book | kdp-coloring-book | github.com/CarlosCaPe/octorato (0a28f79), MIT | O passo da arte chama uma ferramenta "imagegen": em vez disso usamos as imagens que o João faz no Gemini. Predefinição de tamanho é 8,5x8,5: os nossos livros são 8,5x11. |
-| kindle-cover | kindle-cover | github.com/nikmcfly/kindle-cover-skill (954eb8e), MIT (no README) | Script local (reportlab + Pillow). |
-| claude-youtube | claude-youtube | github.com/AgriciDaniel/claude-youtube (84c3fa6), MIT | Funciona sem chaves (dados colados ou capturas do Studio). Ignorar DataForSEO (pago). Não trata "made for kids": isso fica na skill kids-shorts-channel. |
-| social-media-skills | youtube-thumbnail, gemini-carousel, quote-post, graphic-designer | github.com/charlie947/social-media-skills (10ca79c), MIT | Só escrevem pedidos para colar no Gemini à mão. Ficou de fora reels-scripting (usa Apify e API do Gemini). |
+| regras-skills-cayus | a regra acima e como verificar uma skill | — | — |
+| design-cayus | desenhar, criticar e polir o site | Impeccable (pbakaus, Apache-2.0) | telemetria, catálogo online em impeccable.style, descarrega um programa |
+| qualidade-web-local | velocidade, CWV, imagens, SEO técnico; script `medir_pagina.py` (Playwright local) | web-quality-skills (addyosmani, MIT) | recomenda CrUX/PageSpeed (envia o endereço à Google) |
+| youtube-cayus | títulos, descrições, tags, miniaturas, Shorts, estatísticas | claude-youtube (AgriciDaniel, MIT) | API do YouTube, yt-dlp, DataForSEO e NanoBanana (pagos/externos) |
+| prompts-redes-cayus | prompts para colar no Gemini à mão: miniaturas, carrosséis, posts | social-media-skills (charlie947, MIT) | instruções para ligar serviços; uma parte usa Apify e API do Gemini |
+| kdp-montar-livro | limpar páginas, PDF do interior e capa KDP (3 scripts, testados) | kdp-coloring-book (CarlosCaPe, MIT) + kindle-cover (nikmcfly, MIT) | a primeira gera imagens por API |
 
-Para atualizar uma skill: voltar a descarregar, ler o que mudou, e só depois substituir a pasta.
+### De terceiros, mantidas como estão (só texto e scripts locais, lidas linha a linha)
+| Skill | Origem (commit) |
+|---|---|
+| verification-before-completion, systematic-debugging, brainstorming, writing-plans, executing-plans | github.com/obra/superpowers (22f0b46), MIT. O brainstorming tem um servidor só em 127.0.0.1. |
+| webapp-testing | github.com/anthropics/skills (e4bb5d9), Apache-2.0. Playwright em localhost. |
+
+Para atualizar uma skill de terceiros: descarregar, ler o que mudou, aplicar a regra e só depois substituir.
 
 ## Lista completa (11 por categoria)
 
 ### Design de sites
-1. Impeccable — github.com/pbakaus/impeccable ✅ instalada
-2. web-quality-skills — github.com/addyosmani/web-quality-skills ✅ instalada
+1. Impeccable — github.com/pbakaus/impeccable ➜ substituída por design-cayus (envia dados)
+2. web-quality-skills — github.com/addyosmani/web-quality-skills ➜ substituída por qualidade-web-local
 3. web-design-guidelines — github.com/vercel-labs/agent-skills (skills/web-design-guidelines)
 4. Taste Skill — github.com/Leonxlnx/taste-skill
 5. UI UX Pro Max — github.com/nextlevelbuilder/ui-ux-pro-max-skill
@@ -34,7 +42,7 @@ Para atualizar uma skill: voltar a descarregar, ler o que mudou, e só depois su
 11. webapp-testing — github.com/anthropics/skills (skills/webapp-testing) ✅ instalada
 
 ### Imagens
-1. social-media-skills — github.com/charlie947/social-media-skills ✅ instalada (4 skills)
+1. social-media-skills — github.com/charlie947/social-media-skills ➜ substituída por prompts-redes-cayus
 2. nano-banana-prompt-generator — github.com/maciejdzierzek/nano-banana-prompt-generator
 3. design-assets / image-processing — github.com/jezweb/claude-skills (plugins/design-assets)
 4. web-asset-generator — github.com/alonw0/web-asset-generator
@@ -47,7 +55,7 @@ Para atualizar uma skill: voltar a descarregar, ler o que mudou, e só depois su
 11. image-optimization — github.com/secondsky/claude-skills
 
 ### YouTube
-1. claude-youtube — github.com/AgriciDaniel/claude-youtube ✅ instalada
+1. claude-youtube — github.com/AgriciDaniel/claude-youtube ➜ substituída por youtube-cayus
 2. ffmpeg-skill — github.com/kajisho5/ffmpeg-skill
 3. youtube-skills — github.com/sergebulaev/youtube-skills
 4. Remotion Skills — github.com/remotion-dev/skills
@@ -61,9 +69,9 @@ Para atualizar uma skill: voltar a descarregar, ler o que mudou, e só depois su
 - NÃO usar: TubeAlfred (só 50 créditos grátis por 14 dias, depois pago).
 
 ### Livros de colorir / KDP
-1. kdp-coloring-book — github.com/CarlosCaPe/octorato (skills/kdp-coloring-book) ✅ instalada
+1. kdp-coloring-book — github.com/CarlosCaPe/octorato ➜ substituída por kdp-montar-livro
 2. kdp-cover-checker — github.com/hoanghd218/aws-kdp (.claude/skills/kdp-cover-checker), sem licença
-3. kindle-cover — github.com/nikmcfly/kindle-cover-skill ✅ instalada
+3. kindle-cover — github.com/nikmcfly/kindle-cover-skill ➜ juntada em kdp-montar-livro
 4. kdp-book-builder + kdp-image-reviewer — github.com/hoanghd218/aws-kdp, sem licença
 5. Image Production — github.com/danielrosehill/Claude-Image-Production-Plugin
 6. Ask KDP Kings — github.com/cdeistopened/kdp-kings-wiki, sem licença
@@ -77,7 +85,7 @@ Para atualizar uma skill: voltar a descarregar, ler o que mudou, e só depois su
 1. Superpowers — github.com/obra/superpowers ✅ instalada (5 skills)
 2. webapp-testing — github.com/anthropics/skills ✅ instalada
 3. playwright-cli — github.com/microsoft/playwright-cli
-4. web-quality-skills — github.com/addyosmani/web-quality-skills ✅ instalada
+4. web-quality-skills — github.com/addyosmani/web-quality-skills ➜ substituída por qualidade-web-local
 5. hookify — github.com/anthropics/claude-plugins-official (plugins/hookify)
 6. agent-skills — github.com/addyosmani/agent-skills
 7. Chrome DevTools MCP — github.com/ChromeDevTools/chrome-devtools-mcp
