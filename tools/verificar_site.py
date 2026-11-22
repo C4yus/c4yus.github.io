@@ -60,7 +60,7 @@ class P(HTMLParser):
 def pages():
     out = []
     for d, ds, fs in os.walk(ROOT):
-        ds[:] = [x for x in ds if x not in (".git", "node_modules", "tools")]
+        ds[:] = [x for x in ds if not x.startswith(".") and x not in ("node_modules", "tools")]  # pastas com ponto não são publicadas
         for f in fs:
             if f.endswith(".html"): out.append(os.path.join(d, f))
     return sorted(out)

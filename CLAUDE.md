@@ -33,3 +33,4 @@ Secções: Livros, Vídeos, Modelos 3D. O João responde em português de Portug
 - Sem gradientes decorativos (exceto o wordmark listrado), sem cartões todos iguais, movimento reduzido respeitado, foco visível.
 - Arte e nome StarNet não se reutilizam. Imagens pesadas e chaves nunca vão para o repositório.
 - Não editar o repositório privado `cayus-projetos` a partir daqui.
+- Skills e plugins: nenhum pode enviar dados para fora (regra do João, 22 nov 2026). Se for bom mas enviar, escrever uma versão nossa só local; na dúvida, escrever sempre a nossa. Ver skill `regras-skills-cayus` e `.claude/LISTA-SKILLS.md`.
