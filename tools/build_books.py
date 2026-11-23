@@ -43,18 +43,19 @@ for b in BOOKS:
 </head><body>
 <div class="topline"><div class="wrap"><div class="bar"><a class="mark" href="../../index.html">Cayus</a><nav aria-label="Main">
 <a href="../../modelos/index.html">3D models</a><a href="../index.html" aria-current="page">Books</a><a href="../../videos/index.html">Videos</a></nav></div></div></div>
-<main class="wrap">
+<main><section class="pagehero"><div class="wrap">
 <p class="crumb"><a href="../index.html">All books</a></p>
 <section class="bookhead"><img class="cover" src="../../img/{b["cover"]}" alt="{b["alt"]}" width="765" height="990">
 <div><h1>{b["title"]}</h1><p class="sub">{b["sub"]}</p><p class="lede">{b["line"]}</p>
-<p><a class="btn" href="{url}" rel="noopener sponsored">Buy on Amazon</a></p></div></section>
+<p><a class="btn" href="{url}" rel="noopener sponsored">Buy on Amazon</a></p></div></section></div></section>
+<div class="wrap">
 <section class="about"><p>{b["d1"]}</p><p>{b["d2"]}</p></section>
 {anim}<section aria-labelledby="inside"><h2 id="inside">A look inside</h2>
 <ul class="strip">{samples}</ul></section>
 <section aria-labelledby="facts"><h2 id="facts">Details</h2>
 <dl class="facts spec"><div><dt>Designs</dt><dd>{b["n"]}</dd></div><div><dt>Page size</dt><dd>8.5 &times; 11 in</dd></div><div><dt>Print</dt><dd>One side only</dd></div><div><dt>Paper</dt><dd>Blank page behind each design</dd></div>{extra}</dl></section>
 <p class="endcta"><a class="btn" href="{url}" rel="noopener sponsored">Buy on Amazon</a></p>
-</main>
+</div></main>
 <div class="wrap"><footer>&copy; 2026 Cayus Books. All rights reserved. Illustrations are created with the help of AI tools and reviewed by the author.</footer></div></body></html>'''
     os.makedirs(f"livros/{b['slug']}", exist_ok=True)
     open(f"livros/{b['slug']}/index.html","w").write(html)
