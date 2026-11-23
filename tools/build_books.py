@@ -27,7 +27,7 @@ BOOKS = [
   n=50, extra="Belongs-to page and color test page", cover="mindful-nature.jpg", alt="Cover of Mindful Nature coloring book",
   meta="Mindful Nature coloring book for adults: 50 detailed designs of animals, flowers and mandalas, with a color test page."),
 ]
-HEAD = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">'
+HEAD = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
 for b in BOOKS:
     url = f"https://www.amazon.com/dp/{b['asin']}"
     ld = {"@context":"https://schema.org","@type":"Book","name":b["title"],"alternateName":b["sub"],"author":{"@type":"Person","name":"Cayus"},
