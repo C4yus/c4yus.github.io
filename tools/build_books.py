@@ -38,7 +38,7 @@ for b in BOOKS:
     extra = f'<div><dt>Also inside</dt><dd>{b["extra"]}</dd></div>' if b["extra"] else ""
     html = f'''{HEAD}<title>{b["title"]} coloring book | Cayus</title>
 <meta name="description" content="{b["meta"]}"><link rel="stylesheet" href="../../css/site.css"><link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="{b["title"]} | Cayus Books"><meta property="og:type" content="book"><meta property="og:image" content="{SITE}/img/{b["cover"]}"><meta name="theme-color" content="#14261f">
+<meta property="og:title" content="{b["title"]} | Cayus Books"><meta property="og:type" content="book"><meta property="og:image" content="{SITE}/img/{b["cover"]}"><meta property="og:description" content="{b["meta"]}"><meta property="og:url" content="{SITE}/livros/{b["slug"]}/"><link rel="canonical" href="{SITE}/livros/{b["slug"]}/"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#14261f">
 <script type="application/ld+json">{json.dumps(ld)}</script>
 </head><body>
 <div class="topline"><div class="wrap"><div class="bar"><a class="mark" href="../../index.html">Cayus</a><nav aria-label="Main">

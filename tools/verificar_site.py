@@ -94,6 +94,11 @@ for path in ALL:
     if p.h1 != 1: err(rel, f"{p.h1} <h1> (esperado 1)")
     if "main" not in p.t: err(rel, "sem <main>")
     if not p.meta.get("og:title"): warn(rel, "sem og:title")
+    can = [a.get("href") for t, a in p.links if t == "link" and a.get("rel") == "canonical"]
+    if not can: warn(rel, "sem link canonical")
+    elif can[0] != url_of(path): err(rel, f"canonical {can[0]} diferente de {url_of(path)}")
+    for k in ("og:description", "og:image", "og:url"):
+        if not p.meta.get(k): warn(rel, f"sem {k}")
     for im in p.imgs:
         if "alt" not in im: err(rel, f"imagem sem alt: {im.get('src')}")
         if not im.get("width") or not im.get("height"): warn(rel, f"imagem sem width/height: {im.get('src')}")
