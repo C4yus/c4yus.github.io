@@ -9,7 +9,7 @@ Secções: Livros, Vídeos, Modelos 3D. O João responde em português de Portug
 3. As restantes páginas (`index.html`, `livros/index.html`, `videos/`, `modelos/`) são editadas à mão.
 
 ## Skill unslop (instalada a 28/11, revista: sem chamadas externas)
-Usar só em **modo polish** (o site tem marca própria): corrigir o que a auditoria encontrar, sem inventar direção nova. `MARCA.md` e o pedido do João mandam sobre o unslop: o steampunk fica (engrenagens a rodar encaixadas e o CAYUS a imprimir são "motion que explica", não slop), cores e tipos da marca não mudam. Mostrar a auditoria ao João antes de editar. 28/11: pontos 1-4 aplicados (texto honesto sobre IA, rebites só nas salas e placas, sem bordas de latão nas capas e amostras, vapor e chama param depois da impressão, espaçamentos múltiplos de 4); por fazer: peso 800 só no título e logótipo. Cópia revista em `skills_externas\site\unslop` (licença CC BY 4.0, manter o crédito a @heydamir).
+Usar só em **modo polish** (o site tem marca própria): corrigir o que a auditoria encontrar, sem inventar direção nova. `MARCA.md` e o pedido do João mandam sobre o unslop: o steampunk fica (engrenagens a rodar encaixadas e o CAYUS a imprimir são "motion que explica", não slop), cores e tipos da marca não mudam. Mostrar a auditoria ao João antes de editar. 28/11: pontos 1-4 aplicados (texto honesto sobre IA, rebites só nas salas e placas, sem bordas de latão nas capas e amostras, vapor e chama param depois da impressão, espaçamentos múltiplos de 4). Ponto 5 (28/11): peso 800 só no logótipo, no CAYUS da impressora e nos h1; o resto a 700. Cópia revista em `skills_externas\site\unslop` (licença CC BY 4.0, manter o crédito a @heydamir).
 
 ## Ferramentas
 | Ficheiro | Para que serve | Como se corre |

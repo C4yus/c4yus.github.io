@@ -39,7 +39,7 @@ a:hover{color:var(--brass)}
 .topline{border-bottom:3px solid var(--brass)}
 
 /* buttons: brass plate with an inner copper wire */
-.btn{display:inline-block;background:var(--brass);color:var(--forest);text-decoration:none;font-family:var(--display);font-weight:800;padding:12px 24px;border-radius:6px;border:0;
+.btn{display:inline-block;background:var(--brass);color:var(--forest);text-decoration:none;font-family:var(--display);font-weight:700;padding:12px 24px;border-radius:6px;border:0;
   box-shadow:inset 0 0 0 3px var(--brass),inset 0 0 0 4px var(--brass-dark),0 4px 0 var(--brass-dark);cursor:pointer;font-size:1rem}
 .btn:hover{background:var(--parchment);color:var(--forest)}
 .btn:active{transform:translateY(2px);box-shadow:inset 0 0 0 3px var(--parchment),inset 0 0 0 4px var(--brass-dark),0 2px 0 var(--brass-dark)}
@@ -87,13 +87,13 @@ a:hover{color:var(--brass)}
 
 /* ===== HOME: the workshop (three different compartments) ===== */
 .workshop{padding:56px 0 32px}
-.workshop h2.sec{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px}
+.workshop h2.sec{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px}
 .workshop .intro{margin:0 0 28px;color:var(--mute);max-width:36em}
 .bays{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:28px}
 .bay{position:relative;background:var(--panel);border:3px solid var(--brass);border-radius:10px;padding:28px 28px 28px;
   background-image:var(--rivet),var(--rivet),var(--rivet),var(--rivet);background-repeat:no-repeat;
   background-position:9px 9px,calc(100% - 9px) 9px,9px calc(100% - 9px),calc(100% - 9px) calc(100% - 9px);background-size:8px 8px}
-.bay h3{margin:0 0 4px;font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.05}
+.bay h3{margin:0 0 4px;font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.05}
 .bay p{margin:0 0 20px;color:var(--mute);max-width:30em}
 .bay.books{display:flex;flex-direction:column}
 .bay.wide{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,260px);gap:12px 32px;align-items:center;padding-top:32px;padding-bottom:32px}
@@ -129,7 +129,7 @@ footer{margin-top:40px;border-top:3px solid var(--brass);padding:32px 0 40px;fon
 .book{display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:28px 40px;padding:36px 0;border-bottom:1px solid #2f4a3e;align-items:start}
 .book:last-child{border-bottom:0}
 .cover{width:100%;height:auto;aspect-ratio:8.5/11;display:block;object-fit:cover;background:var(--paper);box-shadow:6px 6px 0 var(--deep)}
-.book h2{margin:0 0 8px;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.1}
+.book h2{margin:0 0 8px;font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.1}
 .book h2 a{text-decoration-thickness:2px}
 .book .lede{margin:0 0 16px;max-width:34em;color:var(--mute)}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px 16px;margin:0 0 20px;max-width:34em}
@@ -149,7 +149,7 @@ footer{margin-top:40px;border-top:3px solid var(--brass);padding:32px 0 40px;fon
 
 /* videos */
 .reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 28px;margin:32px 0 20px}
-.reel h2{margin:16px 0 4px;font-family:var(--display);font-weight:800;font-size:1.25rem;line-height:1.15}
+.reel h2{margin:16px 0 4px;font-family:var(--display);font-weight:700;font-size:1.25rem;line-height:1.15}
 .reel h2 a{text-decoration:none}.reel h2 a:hover{text-decoration:underline}
 .reel p{margin:0 0 12px;color:var(--mute)}
 .reel .links{margin-top:12px}
@@ -187,7 +187,7 @@ footer{margin-top:40px;border-top:3px solid var(--brass);padding:32px 0 40px;fon
 
 /* models: next on the bench */
 .next{padding:32px 0 60px}
-.next h2{font-family:var(--display);font-weight:800;font-size:1.8rem;margin:0 0 4px}
+.next h2{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0 0 4px}
 .next>p{color:var(--mute);margin:0 0 20px}
 .plaques{list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .plaque{display:flex;align-items:center;gap:12px;background:var(--parchment);color:var(--forest);border:2px solid var(--brass-dark);border-radius:6px;padding:16px 20px;font-family:var(--display);font-weight:700;
@@ -206,7 +206,7 @@ footer{margin-top:40px;border-top:3px solid var(--brass);padding:32px 0 40px;fon
 .bookhead .sub{margin:12px 0 0;font-size:1.1rem;color:var(--mute)}
 .bookhead .lede{margin:20px 0 24px;max-width:30em;font-size:1.2rem}
 .about{max-width:36em;margin:28px 0 8px}
-main section h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:1.6rem;margin:40px 0 16px}
+main section h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:1.6rem;margin:40px 0 16px}
 main section h2::before{content:"";flex:none;width:.85em;height:.85em;background:var(--ember);-webkit-mask:var(--gear) center/contain no-repeat;mask:var(--gear) center/contain no-repeat}
 .strip{display:flex;gap:20px;list-style:none;margin:0;padding:8px 8px 24px;overflow-x:auto;scroll-snap-type:x mandatory}
 .strip li{flex:0 0 min(62%,290px);scroll-snap-align:start}
