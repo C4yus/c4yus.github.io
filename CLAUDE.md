@@ -15,6 +15,7 @@ Usar só em **modo polish** (o site tem marca própria): corrigir o que a audito
 | Ficheiro | Para que serve | Como se corre |
 |---|---|---|
 | `tools/build_books.py` | gera as 4 páginas de livro a partir de `BOOKS` | `python3 tools/build_books.py` (raiz do repo) |
+| `tools/imagem_partilha.html` | imagem de partilha 1200x630 (`img/partilha.png`, og:image da página inicial), feita com a impressora do `index.html` | `"C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --hide-scrollbars --window-size=1200,630 --virtual-time-budget=3000 --screenshot=C:\googledrive\claude\projectos\site-cayus\img\partilha.png file:///C:/googledrive/claude/projectos/site-cayus/tools/imagem_partilha.html`; se a impressora do index mudar, refazer o html |
 | `tools/verificar_site.py` | verifica estrutura, SEO, acessibilidade, links, Amazon, sitemap, contraste, CSS, livros == build | `python3 -I tools/verificar_site.py` (sai com 1 se houver ERRO) |
 
 ## Novo livro
