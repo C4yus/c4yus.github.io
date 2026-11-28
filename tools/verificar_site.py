@@ -71,7 +71,8 @@ def pages():
     for d, ds, fs in os.walk(ROOT):
         ds[:] = [x for x in ds if not x.startswith(".") and x not in ("node_modules", "tools")]  # pastas com ponto não são publicadas
         for f in fs:
-            if f.endswith(".html"): out.append(os.path.join(d, f))
+            if f.endswith(".html") and not re.fullmatch(r"google[0-9a-f]+\.html", f):  # ficheiro de verificação do Search Console
+                out.append(os.path.join(d, f))
     return sorted(out)
 
 def url_of(path):
